@@ -4,7 +4,9 @@
 
 #This configures the number of workers and managers in the swarm
 managers=3
-workers=3
+workers1=3
+workers2=2
+workers3=1
 
 # This creates the manager machines
 echo "======> Deleting $managers manager machines ...";
@@ -15,11 +17,27 @@ do
 done
 
 # This create worker machines
-echo "======> Deleting $workers worker machines ...";
-for node in $(seq 1 $workers);
+echo "======> Deleting $workers1 worker machines ...";
+for node in $(seq 1 $workers1);
 do
-    echo "======> Deleting worker$node machine ...";
-    docker-machine rm worker$node -y;
+    echo "======> Deleting worker1-$node machine ...";
+    docker-machine rm worker1-$node -y;
+done
+
+# This create worker machines
+echo "======> Deleting $workers2 worker machines ...";
+for node in $(seq 1 $workers2);
+do
+    echo "======> Deleting worker2-$node machine ...";
+    docker-machine rm worker2-$node -y;
+done
+
+# This create worker machines
+echo "======> Deleting $workers3 worker machines ...";
+for node in $(seq 1 $workers3);
+do
+    echo "======> Deleting worker3-$node machine ...";
+    docker-machine rm worker3-$node -y;
 done
 
 # This lists all machines created
