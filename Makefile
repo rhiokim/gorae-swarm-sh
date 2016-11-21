@@ -28,3 +28,11 @@ stop-all:
 start-all:
 	./start-all.sh
 
+push-gorae:
+	./push-gorae-into-vm.sh
+
+push-gorae-sample:
+	./push-gorae-sample-service-into-vm.sh
+
+run-gorae:
+	./run-gorae-on-vm.sh
