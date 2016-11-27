@@ -13,6 +13,7 @@ do
   eval $(docker-machine env manager$node)
   npm run docker:build
   npm run docker:buildv1
+  npm run docker:buildv2
 done
 
 for node in $(seq 1 $workers1);
@@ -21,6 +22,7 @@ do
   eval $(docker-machine env worker1-$node)
   npm run docker:build
   npm run docker:buildv1
+  npm run docker:buildv2
 done
 
 for node in $(seq 1 $workers2);
@@ -29,6 +31,7 @@ do
   eval $(docker-machine env worker2-$node)
   npm run docker:build
   npm run docker:buildv1
+  npm run docker:buildv2
 done
 
 for node in $(seq 1 $workers3);
@@ -37,4 +40,5 @@ do
   eval $(docker-machine env worker3-$node)
   npm run docker:build
   npm run docker:buildv1
+  npm run docker:buildv2
 done

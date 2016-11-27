@@ -36,3 +36,6 @@ push-gorae-sample:
 
 run-gorae:
 	./run-gorae-on-vm.sh
+
+clean-gorae:
+	./clean-gorae.sh

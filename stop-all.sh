@@ -8,20 +8,12 @@ workers1=3
 workers2=2
 workers3=1
 
-# This stops the manager machines
-echo "======> Stop $managers manager machines ...";
-for node in $(seq 1 $managers);
-do
-    echo "======> Stop manager$node machine ...";
-    docker-machine stop manager$node;
-done
-
 # This stop worker machines
-echo "======> Stop $workers1 worker machines ...";
-for node in $(seq 1 $workers1);
+echo "======> Stop $workers3 worker machines ...";
+for node in $(seq 1 $workers3);
 do
-    echo "======> Stop worker1-$node machine ...";
-    docker-machine stop worker1-$node;
+    echo "======> Stop worker3-$node machine ...";
+    docker-machine stop worker3-$node;
 done
 
 # This stop worker machines
@@ -33,11 +25,19 @@ do
 done
 
 # This stop worker machines
-echo "======> Stop $workers3 worker machines ...";
-for node in $(seq 1 $workers3);
+echo "======> Stop $workers1 worker machines ...";
+for node in $(seq 1 $workers1);
 do
-    echo "======> Stop worker3-$node machine ...";
-    docker-machine stop worker3-$node;
+    echo "======> Stop worker1-$node machine ...";
+    docker-machine stop worker1-$node;
+done
+
+# This stops the manager machines
+echo "======> Stop $managers manager machines ...";
+for node in $(seq 1 $managers);
+do
+    echo "======> Stop manager$node machine ...";
+    docker-machine stop manager$node;
 done
 
 # This lists all machines stopd

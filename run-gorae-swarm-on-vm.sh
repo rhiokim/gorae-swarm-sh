@@ -19,6 +19,7 @@ do
   # start new gorae-swarm
   docker run -dit \
     --restart=always \
+    --net=host \
     --name $containerName \
     -p 8082:8082 \
     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -38,6 +39,7 @@ do
   # start new gorae-swarm
   docker run -dit \
     --restart=always \
+    --net=host \
     --name $containerName \
     -p 8082:8082 \
     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -57,6 +59,7 @@ do
   # start new gorae-swarm
   docker run -dit \
     --restart=always \
+    --net=host \
     --name $containerName \
     -p 8082:8082 \
     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -76,6 +79,7 @@ do
   # start new gorae-swarm
   docker run -dit \
     --restart=always \
+    --net=host \
     --name $containerName \
     -p 8082:8082 \
     -v /var/run/docker.sock:/var/run/docker.sock \

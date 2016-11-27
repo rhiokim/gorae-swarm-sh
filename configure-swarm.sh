@@ -30,10 +30,6 @@ export worker_token2=`docker-machine ssh manager2 "docker swarm join-token worke
 export manager_token3=`docker-machine ssh manager3 "docker swarm join-token manager -q"`
 export worker_token3=`docker-machine ssh manager3 "docker swarm join-token worker -q"`
 
-# echo $manager_token2
-# echo $worker_token2
-# exit 0;
-
 # workers join swarm
 for node in $(seq 1 $workers1);
 do
