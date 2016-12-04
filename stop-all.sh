@@ -7,6 +7,7 @@ managers=3
 workers1=3
 workers2=2
 workers3=1
+registry=1
 
 # This stop worker machines
 echo "======> Stop $workers3 worker machines ...";
@@ -38,6 +39,14 @@ for node in $(seq 1 $managers);
 do
     echo "======> Stop manager$node machine ...";
     docker-machine stop manager$node;
+done
+
+# This stop registry machines
+echo "======> Start registry machines ...";
+for node in $(seq 1 $registry);
+do
+    echo "======> Start registry-$node machine ...";
+    docker-machine stop registry-$node;
 done
 
 # This lists all machines stopd

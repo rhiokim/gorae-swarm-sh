@@ -7,6 +7,7 @@ managers=3
 workers1=3
 workers2=2
 workers3=1
+registry=1
 
 # This creates the manager machines
 echo "======> Creating $managers manager machines ...";
@@ -38,6 +39,14 @@ for node in $(seq 1 $workers3);
 do
     echo "======> Creating worker3-$node machine ...";
     docker-machine create -d virtualbox worker3-$node;
+done
+
+# This create registry machines
+echo "======> Creating registry machines ...";
+for node in $(seq 1 $registry);
+do
+    echo "======> Creating registry-$node machine ...";
+    docker-machine create -d virtualbox registry-$node;
 done
 
 # This lists all machines created

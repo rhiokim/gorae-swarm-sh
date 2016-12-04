@@ -7,6 +7,7 @@ managers=3
 workers1=3
 workers2=2
 workers3=1
+registry=1
 
 # This starts the manager machines
 echo "======> Start $managers manager machines ...";
@@ -38,6 +39,14 @@ for node in $(seq 1 $workers3);
 do
     echo "======> Start worker3-$node machine ...";
     docker-machine start worker3-$node;
+done
+
+# This start registry machines
+echo "======> Start registry machines ...";
+for node in $(seq 1 $registry);
+do
+    echo "======> Start registry-$node machine ...";
+    docker-machine start registry-$node;
 done
 
 # This lists all machines startd
