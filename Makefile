@@ -7,6 +7,9 @@ init:
 rm-machine:
 	./remove-machine.sh
 
+upgrade-mahcine:
+	./upgrade-machine.sh
+
 swarm-init:
 	./configure-swarm.sh
 
